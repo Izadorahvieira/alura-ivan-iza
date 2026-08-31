@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111827;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+button {
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #6366f1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #4f46e5;
+    transform: scale(1.05);
+}
+
+#area {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-top: 25px;
+    overflow: hidden;
+    background: #1f2937;
+    border: 2px solid #374151;
+    border-radius: 15px;
+}
+
+/* Todas as formas */
+.forma {
+    position: absolute;
+    animation: aparecer 0.4s ease;
+}
+
+/* Círculo */
+.circulo {
+    border-radius: 50%;
+}
+
+/* Quadrado */
+.quadrado {
+    border-radius: 5px;
+}
+
+/* Triângulo */
+.triangulo {
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid var(--cor);
+}
+
+/* Retângulo */
+.retangulo {
+    border-radius: 5px;
+}
+
+/* Losango */
+.losango {
+    transform: rotate(45deg);
+    border-radius: 5px;
+}
+
+/* Hexágono */
+.hexagono {
+    clip-path: polygon(
+        25% 0%,
+        75% 0%,
+        100% 50%,
+        75% 100%,
+        25% 100%,
+        0% 50%
+    );
+}
+
+/* Estrela */
+.estrela {
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 100%,
+        50% 73%,
+        21% 100%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
